@@ -4,10 +4,8 @@
     align-items: center;
     justify-content: center;
     gap: 80px;
-    margin: 80px 170px;
-    padding-top: 50px;
-
-
+    margin: 70px 10%;
+    /* padding-top: 50px; */
 }
 .services-title{
     position: relative;
@@ -15,22 +13,25 @@
 }
 .services-title h1{
     padding: 0px 30px;
-    font-size:80px;
+    font-size:60px;
     font-weight: 600px;
 }
 .services-title img {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    transform: scaleX(-1) rotate(250deg) ;
+    bottom: -25px;
+    right: 10px;
     z-index: -1;
+    width: 80px;
+    height: 120%;
 }
 
 .services-format{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding: 60px;
+    gap: 10px;
+    padding: 30px;
     border-radius: 10px;
     border: 2px solid white;
     transition: 0.4s ;
@@ -40,16 +41,16 @@
 .services-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 80px;
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
 .services-container h3{
-    font-size: 20px;
-    font-family: 600;
+    font-size: 22px;
+    font-weight: 600;
 }
 .services-container h2{
-    font-size: 38px;
+    font-size: 30px;
     font-weight: 800;
     background: linear-gradient(267deg, #0454d3 0.36%, #9b1111 102.06%);
     background-clip: text;
@@ -59,13 +60,13 @@
 
 .services-format p{
     color: #d4d4d4;
-    font-size: 24px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 30px;
     max-width: 300px;
 }
 .services-readmore {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
     margin-top: 20px;
 }
@@ -80,28 +81,31 @@
     .services{
         align-items: start;
         gap: 70px;
-        margin: 20px 70px;
+        margin: 20px 6%;
     }
     .services-title h1{
         padding: 0;
-        font-size: 50px;
+        font-size: 40px;
     }
-    .services-title img{
-        width: 130px;
-        margin-right: -20px;
+    .services-title img{        
+            top: 5px;
+            right: -20px;
+            width: 65px;
+            height: auto;
+                    
     }
     .services-format{
-        gap: 20px;
-        padding: 32px;
+        gap: 10px;
+        padding: 20px;
 
     }
     .services-format h2{
-        font-size: 28px;
+        font-size: 20px;
 
     }
     .services-format p{
-        font-size: 18px;
-        line-height: 32px;
+        font-size: 16px;
+        line-height: 26px;
         max-height: 300px;
     }
     .services-readmore img{
@@ -109,6 +113,7 @@
     }
     .services-container{
         grid-template-columns: 1fr 1fr;
+        gap: 20px;
     }
 
 }

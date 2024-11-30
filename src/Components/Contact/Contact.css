@@ -4,8 +4,8 @@
     align-items: center;
     justify-content: center;
     gap: 80px;
-    margin: 80px 170px;
-    padding-top: 50px;
+    margin: 80px 10%;
+    /* padding-top: 50px; */
 }
 
 .contact-title{
@@ -14,17 +14,22 @@
 }
 .contact-title h1{
     padding: 0px 30px;
-    font-size:80px;
+    font-size:60px;
     font-weight: 600;
 }
 .contact-title img{
     position: absolute;
-    bottom: 0;
-    right: 0;
+    transform: scaleX(-1) rotate(250deg) ;
+    bottom: -25px;
+    right: 10px;
     z-index: -1;
+    width: 80px;
+    height: 120%;
 }
 .contact-section{
-    gap: 150px;
+    width: 100%;
+    gap: 30px;
+    justify-content: space-between;
     display: flex;
     
 }
@@ -32,12 +37,12 @@
 .contact-left{
     display: flex;
     flex-direction: column;
-    gap: 30px;
-  
+    gap: 20px;
+    flex-basis: 40%;  
     
 }
 .contact-left h1{
-    font-size: 80px;
+    font-size: 50px;
     font-weight: 700;
     background: linear-gradient(270deg, #5719ca 60%, #bb4343 100%);
     background-clip: text;
@@ -46,18 +51,21 @@
 .contact-left p{
     max-width: 550px;
     color: #d8d8d8;
-    font-size: 20px;
-    line-height: 35px;
+    font-size: 16px;
+    line-height: 25px;
 }
 .contact-socials{
     display: flex;
-   gap: 30px;
+    gap: 12px;
 
 }
 .contact-social{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
+}
+.contact-social img{
+    width: 90%;
 }
 .contact-social:hover{
     cursor: pointer;
@@ -72,49 +80,39 @@
 .contact-details{
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 25px;
     color: #d8d8d8;
     font-size: 22px;
+    padding-bottom: 25px;
 }
 .contact-detail{
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 18px;
 }
 
 .contact-right{
+    flex-basis: 55%;
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 30px;
+    gap: 15px;
 
 }
 .contact-right label{
     color: #d8d8d8;
-    font-size: 22px;
-    font-weight: 500;
+   
 }
 
-.contact-right input{
+.contact-right input, .contact-right textarea{
+    width: 100%;
     border: none;
-    width: 700px;
-    height: 78px;
-    padding-left: 20px;
-    border-radius: 4px;
-    background-color: #32323c ;
-    color: #a0a0a0;
-    font-family: outfit;
-    font-size: 20px
-}
-.contact-right textarea{
-    width: 680px;
-    border: none;
-    padding: 25px;
+    padding: 18px 0px 18px 20px;
     border-radius: 4px;
     background: #32323c;
     color: #a0a0a0;
-    font-family: outfit;
-    font-size: 20px;
+    font-family: Outfit;
+    font-size: 18px;
     resize: none;
      
 }
@@ -122,9 +120,10 @@
     border: none;
     color: white;
     border-radius: 50px;
-    font-size: 22px;
-    padding: 20px 60px;
-    margin-bottom: 50px;
+    font-size: 18px;
+    padding: 18px 40px;
+    margin-top: 15px;
+    /* margin-bottom: 50px; */
     cursor: pointer;
     transition: 0.3s;
     background: linear-gradient(264deg, #0454d3 -5.48%, #9b1111 100%);
@@ -136,49 +135,49 @@
 }
 @media(max-width:1105px){
     .contact{
-        gap: 50px;
-        margin: 50px 70px;
+        gap: 40px;
+        margin: 50px 6%;
         align-items: start;
 
     }
     .contact-title h1{
         padding: 0;
-        font-size: 50px;
-        font-weight: 600;
+        font-size: 40px;
+        /* font-weight: 600; */
     }
+   
     .contact-title img{
-        width: 130px;
-        margin-right: -20px;
+        top: 5px;
+        right: -20px;
+        width: 65px;
+        height: auto;
+        
     }
     .contact-section{
         flex-direction: column;
     }
     .contact-left h1{
-        font-size: 54px;
-    }
-    .contact-left p{
-        font-size: 18px;
+        font-size: 35px;
     }
     .contact-detail{
-        gap: 20px;
+        gap: 12px;
+    }
+    .contact-socials{
+        gap: 12px;
+
     }
     .contact-detail img{
-        width: 25px;
+        width: 20px;
+    }
+    .contact-social img{
+        width: 24px;
     }
     .contact-right label{
-        font-size: 20px;
-    }
-    .contact-right input{
-        width: 100%;
-        font-size: 20px;
-    }
-    .contact-right textarea{
-        width: 95%;
-        font-size: 20px;
+        font-size: 14px;
     }
     .contact-submit{
-        font-size: 20px;
-        padding: 15px 40px;
+        font-size: 14px;
+        padding: 16px 22px;
     }
     
 }

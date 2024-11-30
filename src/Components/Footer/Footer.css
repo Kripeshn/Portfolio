@@ -1,8 +1,8 @@
 .footer{
-    margin: 50px 170px;
+    margin: 50px 10% 20px;
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap:25px;
     
 
 }
@@ -12,11 +12,11 @@
 
 }
 .footer-topleft p{
-    font-size: 20px;
-    max-width: 400px;
+    font-size: 16px;
+    max-width: 450px;
 }
 .footer-topleft h2{
-    font-size: 35px;
+    font-size: 28px;
     font-weight: 400;
     background: linear-gradient(270deg, #0454d3 45%, #9b1111 100%);
     /* background: linear-gradient(270deg, #0559df 10%, #9b1111 100%); */
@@ -29,14 +29,14 @@
 .footer-topright{
     display: flex;
     align-items: center;
-    gap: 35px;
+    gap: 15px;
 }
 .anchor-link{
     text-decoration: none;
     color: white;
 }
 
-.footer-email-input{
+/* .footer-email-input{
     display: flex;
     gap: 30px;
     padding: 20px 30px;
@@ -60,18 +60,18 @@
     cursor: pointer;
     transition: 0.3s;
     
-}
+} */
 
 .footer-bottom{
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
 
 }
 .footer-bottomright{
     display: flex;
-    gap: 50px;
-    margin-bottom: 50px;
+    gap: 30px;
+    margin-bottom: 10px;
 }
 .footer-bottomright p:hover{
     text-decoration: underline;
@@ -87,17 +87,25 @@
 }
 @media(max-width:1105px){
     .footer{
-        margin: 0px 70px;
-        right: 0px;
+        margin: 30px 6%;
+        gap: 15px;
+
+        
     }
     .footer-top{
         flex-direction: column;
-        gap: 50px;
+        gap: 30px;
     }
     .footer-bottom{
         display: flex;
         flex-direction: column-reverse;
-        margin-bottom: 50px ;
+        font-size: 12px;
+    }
+    .footer-bottomright{
+        gap: 12px;
+    }
+    .footer-bottomleft{
+        padding-top: 12px;
     }
 
 }

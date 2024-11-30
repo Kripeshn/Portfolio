@@ -14,8 +14,10 @@ const MyWork = () => {
         <img src={theme_pattern} alt='' />
       </div>
       <div className='mywork-container'>
+        
         {mywork_data.map((work, index)=>{
-            return <img key={index} src={work.w_img} alt='' />
+            return <img key={index} src={work.w_img} alt='' ></img>
+            
         })}
       </div>
       <div  className='mywork-showmore'>
