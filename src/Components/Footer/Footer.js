@@ -1,7 +1,7 @@
 import React from 'react'
 import './Footer.css'
 // import footer_logo from '../../assets/footer_logo.svg'
-import user_icon from '../../assets/user_icon.svg'
+// import user_icon from '../../assets/user_icon.svg'
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 const Footer = () => {
@@ -10,7 +10,7 @@ const Footer = () => {
         <div className='footer-top'>
             <div className='footer-topleft'>
                 <h2>KRIPESH</h2>
-                <p>I am a frontend developer from bhaktapur with no years of experience.</p>
+                <p>I am a frontend developer from Bhaktapur with an eager interest in developing web applications.</p>
 
             </div>
             

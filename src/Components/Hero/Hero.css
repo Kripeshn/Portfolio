@@ -49,6 +49,8 @@
     padding: 20px 30px;
     border-radius: 50px;
     background: linear-gradient(267deg, #2564da -5.09%, #e12323 102.06%);
+    border: 2px solid black;
+
 }
 .hero-resume{
     padding: 20px 55px;
