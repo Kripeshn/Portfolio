@@ -27,7 +27,7 @@ const Services_Data = [
     {
         s_no: "04",
         s_name: "Content writing",
-        s_desc: "Content writing involves creating written material for various digital platforms. It includes writing blog posts, articles, social media content, and other forms of online communication to inform, entertain, or persuade audiences."
+        s_desc: "Content writing involves creating written material for various digital platforms. It includes writing blogs, articles, social media content, and other forms of online communication to inform or entertain audiences."
     }
 ]
 

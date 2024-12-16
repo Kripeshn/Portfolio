@@ -41,7 +41,7 @@ function AllServices({
                         <p>{isExpanded === index ? service.s_desc : service.s_desc.split(" ").slice(0, collapsedNumWords).join(" ") + "..."}
                              </p>
                         <div className='services-readmore' onClick={() =>handleReadMoreClick(index) }>
-                            <p>Read More</p>
+                            <p>{isExpanded === index ? collapseButton : ReadmoreButton}</p>
                             <img src={arrow_icon} alt='' />
                          </div>
                     </div>

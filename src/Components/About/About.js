@@ -30,13 +30,7 @@ const About = () => {
             </div>
 
         </div>
-      <div className='about-achievements'>
-      <div className='about-achievement'>
-
-        
-      </div>
-        
-      </div>
+      
     </div>
   )
 }
