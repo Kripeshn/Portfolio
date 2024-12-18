@@ -22,7 +22,7 @@ const mywork_data = [
         w_no:3,
         w_name:"Web design",
         w_img:project3_img,
-        link: "#"
+        link: "https://splitthebill-raum.onrender.com/"
     },
     {
         w_no:4,
