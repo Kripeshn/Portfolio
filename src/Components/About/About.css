@@ -37,10 +37,7 @@
     height: 300px;
     border-radius: 10px 10px 10px 10px;
 }
-.about-section img:hover {
-    rotate: 360deg;
-    transition: 0.5s;
-}
+
 
 .about-right{
     display: flex;
