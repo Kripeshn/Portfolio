@@ -16,7 +16,7 @@ const mywork_data = [
         w_no:2,
         w_name:"Web design",
         w_img:project2_img,
-        link: "www.kripeshneupane.com.np"
+        link: "https://govbudget-frontend.onrender.com/"
     },
     {
         w_no:3,
