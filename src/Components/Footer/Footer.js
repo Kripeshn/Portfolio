@@ -17,7 +17,7 @@ const Footer = () => {
         </div>    
         <hr />
         <div className='footer-bottom'>
-            <div className='footer-bottomleft'>&copy; 2024 Kripesh Neupane. All Rights Reserved.</div>
+            <div className='footer-bottomleft'>&copy; 2026 Kripesh Neupane. All Rights Reserved.</div>
             <div className='footer-bottomright'>
                 <p>Terms of Services</p>
                 <p>Privacy Policy</p>
