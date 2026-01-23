@@ -17,7 +17,7 @@ const About = () => {
             </div>
             <div className='about-right'>
               <div className='about-para'>
-        <p>I'm a student currently pursuing a B.Sc. in Computer Science and Information Technology (CSIT) degree. I'm deeply passionate about frontend development and am continuously honing my skills in this area. </p>
+        <p>I'm a student currently pursuing a B.Sc. in Computer Science and Information Technology (CSIT) degree. I'm deeply passionate about fullstack development and am continuously honing my skills in this area. </p>
         <p>My goal is to secure opportunities in the tech industry where I can apply my knowledge, grow as a developer, and contribute to innovative projects.</p>
                 
               </div>
