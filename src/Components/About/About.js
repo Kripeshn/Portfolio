@@ -17,9 +17,13 @@ const About = () => {
             </div>
             <div className='about-right'>
               <div className='about-para'>
-        <p>I'm a student currently pursuing a B.Sc. in Computer Science and Information Technology (CSIT) degree. I'm deeply passionate about fullstack development and am continuously honing my skills in this area. </p>
-        <p>My goal is to secure opportunities in the tech industry where I can apply my knowledge, grow as a developer, and contribute to innovative projects.</p>
-                
+                  <p>
+                  I am a recent B.Sc. CSIT graduate with hands-on experience in software development through a professional internship and personal projects. I have worked with technologies such as ASP.NET, C#, Angular, React.js, Next.js, MySQL, and MongoDB to build web applications and enterprise solutions.
+                  </p>
+
+                  <p>
+                  I am passionate about full-stack development and continuously strive to improve my technical skills. My goal is to contribute to innovative software projects, gain industry experience, and grow into a skilled software engineer capable of building scalable and impactful applications.
+                  </p>  
               </div>
               <div className='about-skills'>
                 <div className='about-skill'><p>HTML & CSS</p><hr style = {{width: "75%"}}/></div>

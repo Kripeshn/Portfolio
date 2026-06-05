@@ -13,17 +13,31 @@ const MyWork = () => {
         </h1>
         <img src={theme_pattern} alt='' />
       </div>
-      <div className='mywork-container'>
-        
-        {mywork_data.map((work, index)=>{
-            return <a href={work.link} target='blank'><img key={index} src={work.w_img} alt='' ></img></a>
-            
+       <div className='mywork-container'>
+        {mywork_data.map((work, index) => {
+          return (
+            <a
+              href={work.link}
+              target='_blank'
+              rel='noreferrer'
+              key={index}
+              className='work-card'
+            >
+              <img src={work.w_img} alt={work.name} />
+
+              <div className='work-overlay'>
+                <h3>{work.name}</h3>
+              </div>
+            </a>
+          );
         })}
       </div>
-      <div  className='mywork-showmore'>
-        <p>Show more </p>
+      {mywork_data.length > 4 && (
+      <div className='mywork-showmore'>
+        <p>Show more</p>
         <img src={arrow_icon} alt='' />
       </div>
+)}
     </div>
   )
 }

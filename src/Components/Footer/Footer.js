@@ -10,10 +10,8 @@ const Footer = () => {
         <div className='footer-top'>
             <div className='footer-topleft'>
                 <h2>KRIPESH</h2>
-                <p>I am a frontend developer from Bhaktapur with an eager interest in developing web applications.</p>
-
+                <p>I am a software developer from Bhaktapur with an eager interest in developing web applications.</p>
             </div>
-            
         </div>    
         <hr />
         <div className='footer-bottom'>

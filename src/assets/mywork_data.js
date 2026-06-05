@@ -8,27 +8,27 @@ import project4_img from '../assets/project_4.jpg'
 const mywork_data = [
     {
         w_no:1,
-        w_name:"Web design",
+        name:"Tic Tac Toe Game",
         w_img:project1_img,
         link: "https://tic-tac-toe-txvo.onrender.com/"
     },
     {
         w_no:2,
-        w_name:"Web design",
+        name:"Government Budget Transparency Portal",
         w_img:project2_img,
         link: "https://govbudget-frontend.onrender.com/"
     },
     {
         w_no:3,
-        w_name:"Web design",
+        name:"Split the Bill",
         w_img:project3_img,
         link: "https://splitthebill-raum.onrender.com/"
     },
     {
         w_no:4,
-        w_name:"Web design",
+        name:"SoccerKart",
         w_img:project4_img,
-        link: "#"
+        link: "https://soccerkart.onrender.com/"
     },
     // {
     //     w_no:5,
