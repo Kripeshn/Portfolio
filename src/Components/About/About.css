@@ -1,125 +1,225 @@
-.about{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    margin: 70px 10%;
-    /* padding-top: 50px; */
-
-
-}
-.about-title{
-    position: relative;
+.about {
+  padding: 0px 5% 90px;
 }
 
-.about-title h1{
-    padding: 0px 30px;
-    font-size:60px;
-    font-weight: 600;
-}
-.about-title img{
-    position: absolute;
-    transform: scaleX(-1) rotate(250deg) ;
-    bottom: -25px;
-    right: 10px;
-    z-index: -1;
-    width: 80px;
-    height: 120%;
-}
-.about-section{
-    display: flex;
-    gap: 60px;
-
-}
-.about-section img {
-    width: 300px;
-    height: 300px;
-    border-radius: 10px 10px 10px 10px;
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 80px;
+  align-items: start;
 }
 
+/* ── Left ── */
+.about-left {
+  position: sticky;
+  top: 100px;
+}
 
-.about-right{
-    display: flex;
-    flex-direction: column;
+.about-photo-wrap {
+  padding-top: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.about-photo {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1/1.5;
+  object-fit: cover;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+/* subtle blue glow behind the photo */
+.about-photo-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: calc(var(--radius-xl) + 16px);
+  background: radial-gradient(ellipse at center, var(--accent-glow) 0%, transparent 70%);
+  z-index: -1;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-hover);
+  border-radius: 50px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.about-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 6px #22c55e99;
+}
+
+/* ── Right ── */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-top: 8px;
+}
+
+.about-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about-title-accent {
+  color: var(--accent);
+}
+
+.about-paras {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.about-paras strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* ═══════════════════════════════════════
+   ENTRANCE ANIMATIONS
+═══════════════════════════════════════ */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-anim {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-duration: 0.65s;
+  animation-name: heroFadeUp;
+}
+
+.hero-anim--1 { animation-delay: 0.1s; }
+.hero-anim--2 { animation-delay: 0.22s; }
+.hero-anim--3 { animation-delay: 0.38s; }
+.hero-anim--4 { animation-delay: 0.52s; }
+.hero-anim--5 { animation-delay: 0.68s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-anim {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ── Skills ── */
+.about-skills {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-skills-label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skill-name {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.skill-pct {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.skill-track {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(90deg, var(--accent) 0%, #6ea8ff 100%);
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .about-container {
+    grid-template-columns: 1fr;
     gap: 50px;
-}
+  }
 
-.about-para{
+  .about-left {
+    position: static;
     display: flex;
-    flex-direction: column;
-    gap: 15px;
-    font-size: 18px;
-    font-weight: 400;
-}
-.about-skills{
-    display: flex;
-    flex-direction: column;
-    gap:15px;
+    justify-content: center;
+  }
+
+  .about-photo {
+    max-width: 240px;
+  }
 }
 
-.about-skill {
-    display: flex;
-    gap:20px;
-    align-items: center;
-    transition: 0.3s;
-}
-.about-skill p{
-    min-width: 130px;
-    font-size: 20px;
-    font-weight: 500;    
-}
-.about-skill hr{
-    outline: none;
-    border: none;
-    width: 50%;
-    height: 8px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #0454d3 0.36%, #9b1111 106.5%);
-}
-    
-.about-skill:hover {
-    transform: scale(1.05);
-    transition: 0.4s;
+@media (max-width: 600px) {
+  .about {
+    padding: 80px 5% 60px;
+  }
 
-}
-
-@media(max-width: 1000px){
-    .about{
-        gap: 50px;
-        margin: 50px 6%;
-        align-items: start;
-    }
-    .about-title h1{
-        font-size: 40px;
-        padding: 0;
-    }
-    .about-title img{
-        top: 5px;
-        right: -20px;
-        width: 65px;
-        height: auto;
-    }
-    .about-section{
-        flex-direction: column;
-    }
-    .about-left {
-        display: none;
-    }
-    .about-para{
-        
-        line-height: 25px;
-
-    }
-    .about-skill p{
-        font-size: 16px;
-        min-width: 90px;
-    }
-    .about-skill hr{
-        height: 6px;
-        width: 30%;
-
-        
-    }
-
+  .about-left {
+    display: none;
+  }
 }

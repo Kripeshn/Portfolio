@@ -1,37 +1,67 @@
-import React, { useRef, useState } from 'react'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import React, { useState, useEffect } from 'react'
 import './Navbar.css'
-// import logo from '../../assets/logo.svg'
-// import underline from '../../assets/nav_underline.svg'
-import menu_open from '../../assets/menu_open.svg'
-import menu_close from '../../assets/menu_close.svg'
-
 
 const Navbar = () => {
-  const [menu,setMenu] = useState("home");
-  const menuRef = useRef();
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
-  const openMenu = () => {
-    menuRef.current.style.right = "0";
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  const links = [
+    { label: 'About',    id: 'about'    },
+    { label: 'My Work',  id: 'mywork'   },
+    { label: 'Services', id: 'services' },
+    { label: 'Contact',  id: 'contact'  },
+  ]
+
+  const scrollTo = (id) => {
+    const el = document.getElementById(id)
+    if (el) {
+      const offset = 68 // navbar height
+      const top = el.getBoundingClientRect().top + window.scrollY - offset
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+    setMenuOpen(false)
   }
-  const closeMenu = () => {
-    menuRef.current.style.right = "-300px";
-  }
+
   return (
-    <div className='navbar'>
-        <h1 className='logo'>KRIPESH</h1>
-        <img src={menu_open} onClick={openMenu} alt='' className='nav-mob-open'/>
-        <ul ref={menuRef} className='nav-menu'>
-            <img className='nav-mob-close' onClick={closeMenu} src={menu_close} alt='' />
-            <li><AnchorLink className='anchor-link' offset={50} href='#home'><p className={menu === 'home'? 'clicked' : ''} onClick={()=> setMenu("home")}>Home</p></AnchorLink ></li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#about'><p className={menu === 'about'? 'clicked' : ''} onClick={()=> setMenu("about")}>About Me</p></AnchorLink> </li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#services'><p className={menu === 'services'? 'clicked' : ''} onClick={()=> setMenu("services")}>Services</p></AnchorLink ></li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#work'><p className={menu === 'work'? 'clicked' : ''} onClick={()=> setMenu("work")}>Portfolio</p></AnchorLink ></li>
-            <li><AnchorLink className='anchor-link' offset={50} href='#contact'><p className={menu === 'contact'? 'clicked' : ''} onClick={()=> setMenu("contact")}>Contact</p></AnchorLink></li>
+    <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
+      <div className="navbar-inner">
+        <button className="navbar-logo" onClick={() => scrollTo('hero')}>
+          <span className="navbar-logo-dot" />
+          <span>Kripesh<span className="navbar-logo-accent">.</span></span>
+        </button>
+
+        <ul className={`navbar-links ${menuOpen ? 'navbar-links--open' : ''}`}>
+          {links.map(({ label, id }) => (
+            <li key={id}>
+              <button className="navbar-link" onClick={() => scrollTo(id)}>
+                {label}
+              </button>
+            </li>
+          ))}
+          <li>
+            <button className="btn-primary navbar-cta" onClick={() => scrollTo('contact')}>
+              Hire me
+            </button>
+          </li>
         </ul>
-        <div className='nav-connect'><AnchorLink className='anchor-link' offset={50} href='#contact'>Connect With Me</AnchorLink></div>
-     
-    </div>
+
+        <button
+          className={`navbar-hamburger ${menuOpen ? 'navbar-hamburger--open' : ''}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+    </nav>
   )
 }
 

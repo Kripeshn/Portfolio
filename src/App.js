@@ -9,12 +9,12 @@ import Footer from './Components/Footer/Footer'
 
 const App = () => {
   return (
-    <div className='app'>
+    <div className="portfolio-root">
       <Navbar />
       <Hero />
       <About />
-      <Services />
       <MyWork />
+      <Services />
       <Contact />
       <Footer />
     </div>
