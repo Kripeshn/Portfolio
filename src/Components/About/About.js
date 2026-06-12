@@ -1,6 +1,7 @@
 import React from 'react'
 import './About.css'
 import my_photo from '../../assets/profile2.jpg'
+import useInView from '../../hooks/useInView'
 
 const skills = [
   { name: 'HTML & CSS', level: 75 },
@@ -11,13 +12,14 @@ const skills = [
 ]
 
 const About = () => {
+  const [ref, visible] = useInView();
   return (
-    <section id="about" className="about">
+    <section ref={ref} id="about" className="about">
       <div className="about-container">
 
         {/* ── Left: photo + badge ── */}
         <div className="about-left">
-          <div className="about-photo-wrap hero-anim hero-anim--1">
+          <div className={`about-photo-wrap ${visible ? "hero-anim hero-anim--1" : ""}`}>
             <img
               src={my_photo}
               alt="Profile"
@@ -35,7 +37,7 @@ const About = () => {
         <div className="about-right">
 
           {/* Header */}
-          <div className="about-header hero-anim hero-anim--1">
+          <div className={`about-header ${visible ? "hero-anim hero-anim--1" : ""}`}>
             <p className="section-label">About me</p>
 
             <h2 className="section-title">
@@ -48,7 +50,7 @@ const About = () => {
           </div>
 
           {/* Paragraphs */}
-          <div className="about-paras hero-anim hero-anim--2">
+          <div className={`about-paras ${visible ? "hero-anim hero-anim--2" : ""}`}>
             <p>
               I am a recent B.Sc. CSIT graduate with hands-on experience
               in software development through a professional internship
@@ -69,7 +71,7 @@ const About = () => {
           </div>
 
           {/* Skills */}
-          <div className="about-skills hero-anim hero-anim--3">
+          <div className={`about-skills ${visible ? "hero-anim hero-anim--3" : ""}`}>
             <p className="about-skills-label">
               Technical skills
             </p>

@@ -13,9 +13,10 @@ const Navbar = () => {
 
   const links = [
     { label: 'About',    id: 'about'    },
-    { label: 'My Work',  id: 'mywork'   },
+    { label: 'My Work',  id: 'work'   },
+    { label: 'Experience', id: 'experience' },
     { label: 'Services', id: 'services' },
-    { label: 'Contact',  id: 'contact'  },
+    { label: 'Contact',  id: 'contact'  }
   ]
 
   const scrollTo = (id) => {

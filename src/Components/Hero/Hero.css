@@ -14,24 +14,13 @@
   min-height: calc(100vh - 68px);
 }
 
-/* ═══════════════════════════════════════
+/*  ═══════════════════════════════════════
    ENTRANCE ANIMATIONS
 ═══════════════════════════════════════ */
-@keyframes heroFadeUp {
+@keyframes fadeLeft {
   from {
     opacity: 0;
-    transform: translateY(28px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes heroFadeIn {
-  from {
-    opacity: 0;
-    transform: translateX(32px);
+    transform: translateX(-40px);
   }
   to {
     opacity: 1;
@@ -39,12 +28,29 @@
   }
 }
 
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-left {
+  animation-name: fadeLeft;
+}
+
+.hero-up {
+  animation-name: fadeUp;
+}
+
 .hero-anim {
   opacity: 0;
   animation-fill-mode: forwards;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-duration: 0.65s;
-  animation-name: heroFadeUp;
+  animation-duration: 0.7s;
 }
 
 .hero-anim--1 { animation-delay: 0.1s; }
@@ -52,7 +58,7 @@
 .hero-anim--3 { animation-delay: 0.38s; }
 .hero-anim--4 { animation-delay: 0.52s; }
 .hero-anim--5 {
-  animation-name: heroFadeIn;
+  animation-name: fadeLeft;
   animation-delay: 0.35s;
   animation-duration: 0.8s;
 }
@@ -62,7 +68,7 @@
     animation: none;
     opacity: 1;
   }
-}
+} 
 
 /* ═══════════════════════════════════════
    LEFT: CONTENT

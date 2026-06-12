@@ -1,0 +1,374 @@
+.experience {
+  padding: 110px 5% 90px;
+}
+
+.experience-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+/* ── Header ── */
+.experience-header {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.experience-header--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.experience-accent {
+  color: var(--accent);
+}
+
+/* ── Timeline wrapper ── */
+.experience-timeline {
+  position: relative;
+  display: flex;
+  gap: 48px;
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.65s ease 0.1s, transform 0.65s ease 0.1s;
+}
+
+.experience-timeline--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Vertical line ── */
+.exp-line {
+  position: relative;
+  width: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  flex-shrink: 0;
+  min-height: 100%;
+  align-self: stretch;
+}
+
+.exp-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(180deg, var(--accent) 0%, transparent 100%);
+  border-radius: 2px;
+  transition: height 1.2s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.exp-line-fill--animated {
+  height: 100%;
+}
+
+/* ── Dot ── */
+.exp-dot {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.exp-dot-inner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* ── Card ── */
+.exp-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 32px 36px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.exp-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ── Meta row ── */
+.exp-meta {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.exp-meta-left {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.exp-type {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.exp-role {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.exp-company-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  color: var(--text-secondary);
+}
+
+.exp-company-row svg {
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.exp-company {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.exp-sep {
+  color: var(--text-muted);
+}
+
+.exp-location {
+  font-size: 13.5px;
+  color: var(--text-muted);
+}
+
+/* ── Meta right ── */
+.exp-meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.exp-duration-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-hover);
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.exp-duration-badge svg {
+  color: var(--accent);
+}
+
+/* ── Months progress badge ── */
+.exp-months-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+}
+
+.exp-months-fill {
+  width: 80px;
+  height: 4px;
+  background: var(--bg-primary);
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 4 months out of 12 = 33.3% */
+.exp-months-fill::after {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: calc(var(--months) / 12 * 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, #6ea8ff 100%);
+  border-radius: 50px;
+  animation: fillBar 1s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
+}
+
+@keyframes fillBar {
+  from { width: 0; }
+  to   { width: calc(var(--months) / 12 * 100%); }
+}
+
+.exp-months-badge span {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* ── Highlights ── */
+.exp-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.exp-highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  opacity: 0;
+  transform: translateX(-12px);
+  transition:
+    opacity 0.5s ease var(--hi-delay, 0ms),
+    transform 0.5s ease var(--hi-delay, 0ms);
+}
+
+.experience-timeline--visible .exp-highlight {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.exp-highlight-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-subtle);
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.exp-highlight p {
+  font-size: 14.5px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ── Stack ── */
+.exp-stack {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.exp-stack-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.exp-stack-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.exp-stack-tag {
+  padding: 4px 12px;
+  background: var(--accent-subtle);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  transition: border-color 0.22s ease, color 0.22s ease;
+}
+
+.exp-stack-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .experience-timeline {
+    gap: 28px;
+  }
+
+  .exp-card {
+    padding: 24px 22px;
+    gap: 22px;
+  }
+
+  .exp-meta {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .exp-meta-right {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .exp-role {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 500px) {
+  .experience {
+    padding: 80px 5% 60px;
+  }
+
+  .exp-line {
+    display: none;
+  }
+
+  .exp-dot {
+    display: none;
+  }
+
+  .experience-timeline {
+    gap: 0;
+  }
+}

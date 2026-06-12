@@ -19,25 +19,25 @@ const Hero = () => {
         {/* ── Left: content ── */}
         <div className="hero-content">
 
-          <p className="hero-eyebrow hero-anim hero-anim--1">
+          <p className="hero-eyebrow hero-left hero-anim hero-anim--1">
             <span className="hero-eyebrow-dot" />
             Full-stack developer · Open to work
           </p>
 
-          <h1 className="hero-headline hero-anim hero-anim--2">
+          <h1 className="hero-headline hero-left hero-anim hero-anim--2">
             <span className="hero-headline-intro">Hello, I'm</span>
             <span className="hero-headline-name">Kripesh<br />Neupane.</span>
             <span className="hero-headline-role">Building the web, end to end.</span>
           </h1>
 
-          <p className="hero-body hero-anim hero-anim--3">
+          <p className="hero-body hero-anim hero-left hero-anim--3">
             Recent B.Sc. CSIT graduate with real-world experience in{' '}
             <strong>ASP.NET, React, Next.js</strong> and <strong>MongoDB</strong>.
             I care about clean architecture, fast interfaces, and software that
             actually ships.
           </p>
 
-          <div className="hero-actions hero-anim hero-anim--4">
+          <div className="hero-actions hero-anim hero-left hero-anim--4">
             <button className="btn-primary" onClick={() => scrollTo('contact')}>
               Let's work together
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
@@ -56,7 +56,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="hero-stats hero-anim hero-anim--4">
+          <div className="hero-stats hero-anim hero-left hero-anim--4">
             <div className="hero-stat">
               <span className="hero-stat-number">1+</span>
               <span className="hero-stat-label">Year professional experience</span>
@@ -76,7 +76,7 @@ const Hero = () => {
         </div>
 
         {/* ── Right: image ── */}
-        <div className="hero-image-col hero-anim hero-anim--5">
+        <div className="hero-image-col hero-anim hero-up hero-anim--5">
           <div className="hero-image-wrap">
             <div className="hero-image-glow" aria-hidden="true" />
             <div className="hero-image-frame">
